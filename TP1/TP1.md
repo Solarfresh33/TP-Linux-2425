@@ -450,5 +450,107 @@ root@98ed2755060e:/# pip install aioconsole
 >>>
 
 >>> import aiohttp
+```
+
+# II. Images
+
+🌞 Récupérez des images
 
 ```
+solar@ROGMAXG14:~$ dk pull python
+
+Using default tag: latest
+latest: Pulling from library/python
+Digest: sha256:9255d1993f6d28b8a1cd611b108adbdfa38cb7ccc46ddde8ea7d734b6c845e32
+Status: Image is up to date for python:latest
+docker.io/library/python:latest
+
+solar@ROGMAXG14:~$ docker pull mysql
+
+Using default tag: latest
+latest: Pulling from library/mysql
+2c0a233485c3: Pull complete 
+cb5a6a8519b2: Pull complete 
+570d30cf82c5: Pull complete 
+a841bff36f3c: Pull complete 
+80ba30c57782: Pull complete 
+5e49e1f26961: Pull complete 
+ced670fc7f1c: Pull complete 
+0b9dc7ad7f03: Pull complete 
+cd0d5df9937b: Pull complete 
+1f87d67b89c6: Pull complete 
+Digest: sha256:0255b469f0135a0236d672d60e3154ae2f4538b146744966d96440318cc822c6
+Status: Downloaded newer image for mysql:latest
+docker.io/library/mysql:latest
+
+solar@ROGMAXG14:~$ docker pull wordpress
+
+Using default tag: latest
+latest: Pulling from library/wordpress
+bc0965b23a04: Already exists 
+e0aa8e8bfd10: Pull complete 
+f45eeb7b7c66: Pull complete 
+2802fa207e46: Pull complete 
+2bc706e6dbbe: Pull complete 
+8f2b85a95cfd: Pull complete 
+2586d713206f: Pull complete 
+086063f0275c: Pull complete 
+61a388cf2f83: Pull complete 
+73fd6b827991: Pull complete 
+c2dd75e58cab: Pull complete 
+3b01564181f9: Pull complete 
+16d45113a90d: Pull complete 
+4f4fb700ef54: Pull complete 
+c4f8720ddb1e: Pull complete 
+d374174149dd: Pull complete 
+f09c82e22e1b: Pull complete 
+dd7711b88413: Pull complete 
+a89cceed0693: Pull complete 
+dab7a4cf5d37: Pull complete 
+e6f609a11365: Pull complete 
+1bbc7feeba6d: Pull complete 
+Digest: sha256:2f3572d5cd722489fe47d59ed45d947dc9507f5a019eb0567ddf24aedf9257ed
+Status: Downloaded newer image for wordpress:latest
+docker.io/library/wordpress:latest
+
+solar@ROGMAXG14:~$ dk pull linuxserver/wikijs
+Using default tag: latest
+latest: Pulling from linuxserver/wikijs
+72387e7898ce: Pull complete 
+ec7680b185bf: Pull complete 
+b80232684b80: Pull complete 
+52e5d6eefe42: Pull complete 
+f224b10b4dc1: Pull complete 
+d179dce5799c: Pull complete 
+ff211b9bebf2: Pull complete 
+979004086415: Pull complete 
+Digest: sha256:45ecf23a3bf849a0bf0c9e2d832aede159e98efd29fef70bbc7ff4dd87522eba
+Status: Downloaded newer image for linuxserver/wikijs:latest
+docker.io/linuxserver/wikijs:latest
+
+solar@ROGMAXG14:~$ docker image list
+
+REPOSITORY           TAG       IMAGE ID       CREATED       SIZE
+linuxserver/wikijs   latest    863e49d2e56c   6 days ago    465MB
+python               latest    3ca4060004b1   8 days ago    1.02GB
+debian               latest    ff869c3288a4   10 days ago   117MB
+nginx                latest    66f8bdd3810c   2 weeks ago   192MB
+wordpress            latest    c89b40a25cd1   2 weeks ago   700MB
+ubuntu               latest    b1d9df8ab815   3 weeks ago   78.1MB
+mysql                latest    56a8c14e1404   8 weeks ago   603MB
+```
+
+🌞 Lancez un conteneur à partir de l'image Python
+
+```
+solar@ROGMAXG14:~$ docker run -it python bash
+root@7d68a59fb9ad:/# python -V
+Python 3.13.1
+```
+
+## 2. Construire une image
+
+🌞 Ecrire un Dockerfile pour une image qui héberge une application Python
+
+
+

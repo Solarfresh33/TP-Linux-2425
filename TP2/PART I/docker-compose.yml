@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  Webapp:
+    image: python_app:WebApp
+    ports:
+      - "8888:8888"
+    volumes:
+      - "./main.py:/app/main.py"
+    environment:
+      - DB_HOST=db
+    command: python main.py
+    depends_on:
+      - db
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=meow
+    volumes:
+      - "./seed.sql:/docker-entrypoint-initdb.d/seed.sql"
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+     - "8080:80"
+    environment:
+     - PMA_USER=root
+     - PMA_PASSWORD=meow
+     - PMA_ARBITRARY=1
