@@ -8,4 +8,6 @@
 
 Tu as juste à te rendre dans le dossier **Part I** et taper ***docker compose up*** et l'app se lance.
 
-## Partie 2 : Dév Python
+## Partie 2 : Dév  packaging et environnement de dév local
+
+
